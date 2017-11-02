@@ -28,9 +28,9 @@ while(True):
 		# grab the raw NumPy array representing the image, then initialize the timestamp
 		# and occupied/unoccupied text
 		image = frame.array
-
+		ret, frame = image.read()
 		# Our operations on the frame come here
-		gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+		gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
 		# Detect faces in the image
 		faces = faceCascade.detectMultiScale(
