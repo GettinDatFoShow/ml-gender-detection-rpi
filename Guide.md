@@ -27,6 +27,10 @@ I say painstaking here becuase all together, this process took about 1.5 hours t
 
 ... : Once the model has been trained to a percentage that you are happy with, you will then have a python script called label_image.py. This is the python file you run against the face photos when you've detected and have them. You can now test your trained model by running the script with a flag to the location of a photo of a face that hasnt before been seen by your model. 
 
+... : Next we will follow a tutorial to set up and test our picamera. you can find this tutorial here: https://www.pyimagesearch.com/2015/03/30/accessing-the-raspberry-pi-camera-with-opencv-and-python/
+
+
+
 
 
 
