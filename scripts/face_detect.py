@@ -1,5 +1,9 @@
 # This script will detect faces via your webcam.
 # Tested with OpenCV3
+# import the necessary packages
+from picamera.array import PiRGBArray
+from picamera import PiCamera
+import time
 import numpy as np
 import cv2
 
