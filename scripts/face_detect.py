@@ -25,7 +25,7 @@ while(True):
 	image = cv2.imdecode(data, 1)
 	# OpenCV returns an array with data in BGR order. If you want RGB instead
 	# use the following...
-	frame = image[:, :, ::-1]
+	# frame = image[:, :, ::-1]
 
 	# Capture frame-by-frame
 	# ret, frame = cap.read()
