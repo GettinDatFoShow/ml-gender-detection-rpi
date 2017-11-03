@@ -19,7 +19,7 @@ time.sleep(0.1)
 # cap = cv2.VideoCapture(1)
 
 # Create the haar cascade
-# faceCascade = cv2.CascadeClassifier("haarcascade_frontalface_default.xml")
+faceCascade = cv2.CascadeClassifier("haarcascade_frontalface_default.xml")
 
 while(True):
 	# Capture frame-by-frame
@@ -35,7 +35,7 @@ while(True):
 
 		# clear the stream in preparation for the next frame
 		rawCapture.truncate(0)
-		
+
 		# ret, frame = cap.read()
 
 		# Our operations on the frame come here
