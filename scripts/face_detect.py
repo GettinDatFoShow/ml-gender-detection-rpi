@@ -32,15 +32,10 @@ while(True):
 
 		# show the frame
 		cv2.imshow("Frame", image)
-		key = cv2.waitKey(1) & 0xFF
 
 		# clear the stream in preparation for the next frame
 		rawCapture.truncate(0)
-
-		# if the `q` key was pressed, break from the loop
-		if key == ord("q"):
-			break
-
+		
 		# ret, frame = cap.read()
 
 		# Our operations on the frame come here
