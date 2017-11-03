@@ -22,7 +22,7 @@ while(True):
 	# Construct a numpy array from the stream
 	data = np.fromstring(stream.getvalue(), dtype=np.uint8)
 	# "Decode" the image from the array, preserving colour
-	image = cv2.imdecode(data, 1)
+	frame = cv2.imdecode(data, 1)
 	# OpenCV returns an array with data in BGR order. If you want RGB instead
 	# use the following...
 	# frame = image[:, :, ::-1]
