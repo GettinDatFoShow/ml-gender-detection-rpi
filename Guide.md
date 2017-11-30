@@ -24,7 +24,12 @@ STEPS
 ..|..  Endure the painstaking time it takes to install OpenCV 3 for python on my raspberry pi. Follow, very closely, the directions found here: https://www.pyimagesearch.com/2016/04/18/install-guide-raspberry-pi-3-raspbian-jessie-opencv-3/
 I say painstaking here because all together, this process took about 1.5 hours to complete. the openCv build using all 4 cores took 1 hour by itself, If your pi has trouble overheating, you may have to use less cores which could take even longer. This could also be much longer if you are using a raspberry pi B or B+. GOOD LUCK!
 
-..|..  Install tensorflow on the raspberry pi  with directions found here: https://github.com/samjabrahams/tensorflow-on-raspberry-pi/blob/master/GUIDE.md
+..|..  Install tensorflow on the raspberry pi  with directions found here: https://github.com/samjabrahams/tensorflow-on-raspberry-pi/blob/master/GUIDE.md 
+
+*** helpful hint: in order for the installation of tensorflow you must now use a newer version of bazel (0.5.4) and above.
+This requires you to changes the bazel zip download. As of this writing I used the following commands: 
+wget https://github.com/bazelbuild/bazel/releases/download/0.8.0/bazel-0.8.0-dist.zip
+unzip -d bazel bazel-0.8.0-dist.zip 
 
 ..|..  On the main system, once 2000 male faces had been separated into a folder named male and 2000 faces into a folder named female, I then placed both folders inside of the a folder called faces. (these directions applied to me, but you may be training your system to recognize other objects.) 
 
