@@ -31,6 +31,9 @@ This requires you to changes the bazel zip download. As of this writing I used t
 wget https://github.com/bazelbuild/bazel/releases/download/0.8.0/bazel-0.8.0-dist.zip
 unzip -d bazel bazel-0.8.0-dist.zip 
 
+*** also: the second changes for the get_cpu_value() function is now located here:
+sudo nano tools/cpp/lib_cc_configure.bzl
+
 ..|..  On the main system, once 2000 male faces had been separated into a folder named male and 2000 faces into a folder named female, I then placed both folders inside of the a folder called faces. (these directions applied to me, but you may be training your system to recognize other objects.) 
 
 ..|..  On the main system, proceed to follow the guide/download Tensorflow for poets from here: https://codelabs.developers.google.com/codelabs/tensorflow-for-poets/#0
