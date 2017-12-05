@@ -10,6 +10,7 @@ stream = io.BytesIO()
 #Get the picture (low resolution, so it should be quite fast)
 #Here you can also specify other parameters (e.g.:rotate the image)
 with picamera.PiCamera() as camera:
+    camera.vflip = True
     camera.resolution = (320, 240)
     camera.capture(stream, format='jpeg')
 
