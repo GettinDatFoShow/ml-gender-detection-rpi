@@ -13,7 +13,7 @@ import cv2
 camera = PiCamera()
 camera.vflip = True
 camera.resolution = (640, 480)
-camera.framerate = 90
+camera.framerate = 40
 rawCapture = PiRGBArray(camera, size=(640, 480))
 
 # allow the camera to warmup
@@ -43,6 +43,7 @@ for frame in camera.capture_continuous(rawCapture, format="bgr", use_video_port=
         cv2.rectangle(image, (x, y), (x + w, y + h), (255, 255, 0), 2)
 
     cv2.imshow("Frame", image)
+
 
     key = cv2.waitKey(1) & 0xFF
 
