@@ -36,7 +36,7 @@ for frame in camera.capture_continuous(rawCapture, format="bgr", use_video_port=
     # Look for faces in the image using the loaded cascade file
     faces = face_cascade.detectMultiScale(gray, 1.1, 5)
 
-    print("Found " + str(len(faces)) + " face(s)")
+    # print("Found " + str(len(faces)) + " face(s)")
 
     # Draw a rectangle around every found face
     for (x, y, w, h) in faces:
