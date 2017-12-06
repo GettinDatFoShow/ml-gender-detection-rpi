@@ -34,6 +34,7 @@ faces = face_cascade.detectMultiScale(gray, 1.1, 5)
 #Draw a rectangle around every found face
 for (x,y,w,h) in faces:
     cv2.rectangle(image,(x,y),(x+w,y+h),(255,255,0),2)
+    imCrop = cv2.selectROI(image)
 
 #Save the result image
 cv2.imwrite('result.jpg',image)

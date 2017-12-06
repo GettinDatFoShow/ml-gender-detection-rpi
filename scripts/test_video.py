@@ -41,8 +41,10 @@ for frame in camera.capture_continuous(rawCapture, format="bgr", use_video_port=
     # Draw a rectangle around every found face
     for (x, y, w, h) in faces:
         cv2.rectangle(image, (x, y), (x + w, y + h), (255, 255, 0), 2)
+        imCrop = cv2.selectROI(image)
 
     cv2.imshow("Frame", image)
+    cv2.imshow("Frame2", imCrop)
 
 
     key = cv2.waitKey(1) & 0xFF
