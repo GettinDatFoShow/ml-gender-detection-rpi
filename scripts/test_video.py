@@ -42,6 +42,7 @@ for frame in camera.capture_continuous(rawCapture, format="bgr", use_video_port=
     for (x, y, w, h) in faces:
         cv2.rectangle(image, (x, y), (x + w, y + h), (255, 255, 0), 2)
         imCrop = image[y:y+h, x:x+w]
+        print(y,y+h, x,x+w)
         cv2.imshow("Frame2", imCrop)
 
     cv2.imshow("Frame", image)
