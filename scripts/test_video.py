@@ -44,6 +44,7 @@ for frame in camera.capture_continuous(rawCapture, format="bgr", use_video_port=
         imCrop = image[y:y+h, x:x+w]
         print(y,y+h, x,x+w)
         cv2.imshow("Frame2", imCrop)
+        cv2.imwrite("found_face.jpg", imCrop)
 
     cv2.imshow("Frame", image)
 
