@@ -43,7 +43,7 @@ def evaluate_graph(graph_file_name):
             labels = ground_truth_input,
             logits = logits))
         
-    image_dir = 'tf_files/flower_photos'
+    image_dir = 'tf_files/faces'
     testing_percentage = 10
     validation_percentage = 10
     validation_batch_size = 100
