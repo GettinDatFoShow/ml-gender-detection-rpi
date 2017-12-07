@@ -68,21 +68,21 @@ def load_labels(label_file):
 
 
 
-def SetTopAngle(angle):
-    duty = angle /18+2
-    GPIO.output(7, True)
-    top.ChangeDutyCycle(duty)
-    sleep(1)
-    GPIO.output(7, False)
-    top.ChangeDutyCycle(0)
-
-def SetBottomAngle(angle):
-    duty = angle /18+2
-    GPIO.output(11, True)
-    bottom.ChangeDutyCycle(duty)
-    sleep(1)
-    GPIO.output(11, False)
-    bottom.ChangeDutyCycle(0)
+# def SetTopAngle(angle):
+#     duty = angle /18+2
+#     GPIO.output(7, True)
+#     top.ChangeDutyCycle(duty)
+#     sleep(1)
+#     GPIO.output(7, False)
+#     top.ChangeDutyCycle(0)
+#
+# def SetBottomAngle(angle):
+#     duty = angle /18+2
+#     GPIO.output(11, True)
+#     bottom.ChangeDutyCycle(duty)
+#     sleep(1)
+#     GPIO.output(11, False)
+#     bottom.ChangeDutyCycle(0)
 
 if __name__ == "__main__":
     file_name = "./face_output.jpg"
@@ -128,15 +128,15 @@ if __name__ == "__main__":
     # GPIO.cleanup()
 
 
-
-    GPIO.setmode(GPIO.BOARD)
-    GPIO.setup(7, GPIO.OUT)
-    GPIO.setup(11, GPIO.OUT)
-
-    top = GPIO.PWM(7, 50)
-    top.start(0)
-    bottom = GPIO.PWM(11, 50)
-    bottom.start(0)
+    #
+    # GPIO.setmode(GPIO.BOARD)
+    # GPIO.setup(7, GPIO.OUT)
+    # GPIO.setup(11, GPIO.OUT)
+    #
+    # top = GPIO.PWM(7, 50)
+    # top.start(0)
+    # bottom = GPIO.PWM(11, 50)
+    # bottom.start(0)
 
 
     # initialize the camera and grab a reference to the raw camera capture
@@ -213,7 +213,7 @@ if __name__ == "__main__":
 
         # if the `q` key was pressed, break from the loop
         if key == ord("q"):
-            top.stop()
-            bottom.stop()
-            GPIO.cleanup()
+            # top.stop()
+            # bottom.stop()
+            # GPIO.cleanup()
             break
