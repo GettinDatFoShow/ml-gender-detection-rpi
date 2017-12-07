@@ -44,6 +44,20 @@ I say painstaking here because all together, this process took about 1.5 hours t
 ..|..  After you have tested your camera and know that it is working correctly, it's time to get started using openCV with the picamera. This can sometimes be challenging because there are so many different ways people choose to do this. Since there are so many ways, there are a lot of tutorials which can lead to mis-matching different steps. The tutorial followed here is located at: https://pythonprogramming.net/raspberry-pi-camera-opencv-face-detection-tutorial/ 
 video at: https://www.youtube.com/watch?v=1I4gHpctXbU
 
+..|.. Once your are satisfied that openCv and tensorflow are installed on your pi, your model has been trained on your laptop/desktop, we can then move or git clone our tensorflow scripts and folders directly to our pi. This is because we want to used our retrained graph in our raspberry pi program. Then we can use the code with the label_image.py file. In this project I mixed the lable_image.py code into the gender_toilet_operation.py. I had to change the default paths specified here (change to work based on your project and image file locations): 
+if __name__ == "__main__":
+    file_name = "./face_output.jpg"
+    model_file = "../tf_files/retrained_graph.pb"
+    label_file = "../tf_files/retrained_labels.txt"
+    input_height = 224
+    input_width = 224
+    input_mean = 128
+    input_std = 128
+    input_layer = "input"
+    output_layer = "final_result" 
+   
+..|.. if you have finished up to this point you should be good to go. if you have any question do the the uglyness of the feel free to comment and ask any questions. Ill be glad to inform or help in any way.
+
 
 
 
