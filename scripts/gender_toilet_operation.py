@@ -169,7 +169,7 @@ if __name__ == "__main__":
         faces = face_cascade.detectMultiScale(gray, 1.1, 5)
 
         if len(faces) > 0:
-            print("Found " + str(len(faces)) + " face(s) testing in: " + counter)
+            print("Found " + str(len(faces)) + " face(s) testing in: " + str(counter))
         else:
             counter = 0
 
