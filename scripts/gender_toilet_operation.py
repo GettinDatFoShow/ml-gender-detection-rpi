@@ -25,9 +25,9 @@ GPIO.setmode(GPIO.BOARD)
 GPIO.setup(7, GPIO.OUT)
 GPIO.setup(11, GPIO.OUT)
 
-top=GPIO.PWM(3, 50)
+top=GPIO.PWM(7, 50)
 top.start(0)
-bottom=GPIO.PWM(5, 50)
+bottom=GPIO.PWM(11, 50)
 bottom.start(0)
 
 def load_graph(model_file):
