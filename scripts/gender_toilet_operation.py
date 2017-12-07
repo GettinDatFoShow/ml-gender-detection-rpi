@@ -206,10 +206,11 @@ if __name__ == "__main__":
                 labels = load_labels(label_file)
                 for i in top_k:
                     print(labels[i], results[i])
+                    print(labels[0])
                     if labels[0] == "male":
-                        if results[0]:
+                        if results[0] > .6:
                             print("lifting toilet seat for a dude!!!")
-                    else:
+                    elif labels[0] == "female":
                         if results[0] > .6:
                             print("lifting only the lid for a woman!!")
         cv2.imshow("Frame", image)
