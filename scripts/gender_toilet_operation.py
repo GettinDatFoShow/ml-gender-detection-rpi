@@ -22,8 +22,8 @@ from time import sleep
 GPIO.cleanup()
 
 GPIO.setmode(GPIO.BOARD)
-GPIO.setup(3, GPIO.OUT)
-GPIO.setup(5, GPIO.OUT)
+GPIO.setup(7, GPIO.OUT)
+GPIO.setup(11, GPIO.OUT)
 
 top=GPIO.PWM(3, 50)
 top.start(0)
