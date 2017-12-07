@@ -66,16 +66,7 @@ def load_labels(label_file):
         label.append(l.rstrip())
     return label
 
-GPIO.cleanup()
 
-GPIO.setmode(GPIO.BOARD)
-GPIO.setup(7, GPIO.OUT)
-GPIO.setup(11, GPIO.OUT)
-
-top=GPIO.PWM(7, 50)
-top.start(0)
-bottom=GPIO.PWM(11, 50)
-bottom.start(0)
 
 def SetTopAngle(angle):
     duty = angle /18+2
@@ -134,6 +125,19 @@ if __name__ == "__main__":
         input_layer = args.input_layer
     if args.output_layer:
         output_layer = args.output_layer
+    # GPIO.cleanup()
+
+
+
+    GPIO.setmode(GPIO.BOARD)
+    GPIO.setup(7, GPIO.OUT)
+    GPIO.setup(11, GPIO.OUT)
+
+    top = GPIO.PWM(7, 50)
+    top.start(0)
+    bottom = GPIO.PWM(11, 50)
+    bottom.start(0)
+
 
     # initialize the camera and grab a reference to the raw camera capture
     camera = PiCamera()
