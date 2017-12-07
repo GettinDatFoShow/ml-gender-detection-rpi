@@ -19,7 +19,7 @@ import tensorflow as tf
 import RPi.GPIO as GPIO
 from time import sleep
 
-GPIO.cleanup()
+# GPIO.cleanup()
 
 GPIO.setmode(GPIO.BOARD)
 GPIO.setup(7, GPIO.OUT)
@@ -78,18 +78,18 @@ def load_labels(label_file):
 def SetTopAngle(angle):
     duty = angle /18+2
     GPIO.output(3, True)
-    pwm.ChangeDutyCycle(duty)
+    top.ChangeDutyCycle(duty)
     sleep(1)
     GPIO.output(3, False)
-    pwm.ChangeDutyCycle(0)
+    top.ChangeDutyCycle(0)
 
 def SetBottomAngle(angle):
     duty = angle /18+2
     GPIO.output(5, True)
-    pwm.ChangeDutyCycle(duty)
+    bottom.ChangeDutyCycle(duty)
     sleep(1)
     GPIO.output(5, False)
-    pwm.ChangeDutyCycle(0)
+    bottom.ChangeDutyCycle(0)
 
 if __name__ == "__main__":
     file_name = "./face_output.jpg"
