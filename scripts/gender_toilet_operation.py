@@ -16,7 +16,17 @@ from picamera.array import PiRGBArray
 from picamera import PiCamera
 import time
 import tensorflow as tf
+import RPi.GPIO as GPIO
+from time import sleep
 
+GPIO.setmode(GPIO.BOARD)
+GPIO.setup(03, GPIO.OUT)
+GPIO.setup(05, GPIO.OUT)
+
+top=GPIO.PWM(03, 50)
+top.start(0)
+bottom=GPIO.PWM(05, 50)
+bottom.start(0)
 
 def load_graph(model_file):
     graph = tf.Graph()
@@ -63,6 +73,21 @@ def load_labels(label_file):
         label.append(l.rstrip())
     return label
 
+def SetTopAngle(angle):
+    duty = angle /18+2
+    GPIO.output(03, True)
+    pwm.ChangeDutyCycle(duty)
+    sleep(1)
+    GPIO.output(03, False)
+    pwm.ChangeDutyCycle(0)
+
+def SetBottomAngle(angle):
+    duty = angle /18+2
+    GPIO.output(03, True)
+    pwm.ChangeDutyCycle(duty)
+    sleep(1)
+    GPIO.output(03, False)
+    pwm.ChangeDutyCycle(0)
 
 if __name__ == "__main__":
     file_name = "./face_output.jpg"
@@ -180,4 +205,7 @@ if __name__ == "__main__":
 
         # if the `q` key was pressed, break from the loop
         if key == ord("q"):
+            top.stop()
+            bottom.stop()
+            GPIO.cleanup()
             break
