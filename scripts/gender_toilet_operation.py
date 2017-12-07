@@ -19,16 +19,7 @@ import tensorflow as tf
 import RPi.GPIO as GPIO
 from time import sleep
 
-# GPIO.cleanup()
 
-GPIO.setmode(GPIO.BOARD)
-GPIO.setup(7, GPIO.OUT)
-GPIO.setup(11, GPIO.OUT)
-
-top=GPIO.PWM(7, 50)
-top.start(0)
-bottom=GPIO.PWM(11, 50)
-bottom.start(0)
 
 def load_graph(model_file):
     graph = tf.Graph()
@@ -74,6 +65,17 @@ def load_labels(label_file):
     for l in proto_as_ascii_lines:
         label.append(l.rstrip())
     return label
+
+GPIO.cleanup()
+
+GPIO.setmode(GPIO.BOARD)
+GPIO.setup(7, GPIO.OUT)
+GPIO.setup(11, GPIO.OUT)
+
+top=GPIO.PWM(7, 50)
+top.start(0)
+bottom=GPIO.PWM(11, 50)
+bottom.start(0)
 
 def SetTopAngle(angle):
     duty = angle /18+2
