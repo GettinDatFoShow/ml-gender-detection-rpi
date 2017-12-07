@@ -19,6 +19,8 @@ import tensorflow as tf
 import RPi.GPIO as GPIO
 from time import sleep
 
+GPIO.cleanup()
+
 GPIO.setmode(GPIO.BOARD)
 GPIO.setup(3, GPIO.OUT)
 GPIO.setup(5, GPIO.OUT)
