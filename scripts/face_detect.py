@@ -118,6 +118,7 @@ if __name__ == "__main__":
 
     # capture frames from the camera
     counter = 0
+
     for frame in camera.capture_continuous(rawCapture, format="bgr", use_video_port=True):
         # grab the raw NumPy array representing the image, then initialize the timestamp
         # and occupied/unoccupied text
@@ -142,10 +143,10 @@ if __name__ == "__main__":
             counter += 1
             cv2.rectangle(image, (x, y), (x + w, y + h), (255, 255, 0), 2)
             imCrop = image[y:y + h, x:x + w]
-            print(y, y + h, x, x + w)
+            # print(y, y + h, x, x + w)
             cv2.imshow("Frame2", imCrop)
             if counter == 10:
-                # cv2.imwrite("face_output.jpg", imCrop)
+                cv2.imwrite("face_output.jpg", imCrop)
                 counter = 0
 
                 graph = load_graph(model_file)
@@ -170,13 +171,13 @@ if __name__ == "__main__":
                 for i in top_k:
                     print(labels[i], results[i])
 
-	cv2.imshow("Frame", image)
+        cv2.imshow("Frame", image)
 
-	key = cv2.waitKey(1) & 0xFF
+        key = cv2.waitKey(1) & 0xFF
 
-	# clear the stream in preparation for the next frame
-	rawCapture.truncate(0)
+        # clear the stream in preparation for the next frame
+        rawCapture.truncate(0)
 
-	# if the `q` key was pressed, break from the loop
-	if key == ord("q"):
-		break
+        # if the `q` key was pressed, break from the loop
+        if key == ord("q"):
+            break
