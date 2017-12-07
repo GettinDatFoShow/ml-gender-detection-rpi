@@ -66,8 +66,8 @@ def load_labels(label_file):
 
 if __name__ == "__main__":
     file_name = "./face_output.jpg"
-    model_file = "tf_files/retrained_graph.pb"
-    label_file = "tf_files/retrained_labels.txt"
+    model_file = "../tf_files/retrained_graph.pb"
+    label_file = "../tf_files/retrained_labels.txt"
     input_height = 224
     input_width = 224
     input_mean = 128
