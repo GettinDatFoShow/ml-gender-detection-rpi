@@ -77,18 +77,18 @@ def load_labels(label_file):
 
 def SetTopAngle(angle):
     duty = angle /18+2
-    GPIO.output(3, True)
+    GPIO.output(7, True)
     top.ChangeDutyCycle(duty)
     sleep(1)
-    GPIO.output(3, False)
+    GPIO.output(7, False)
     top.ChangeDutyCycle(0)
 
 def SetBottomAngle(angle):
     duty = angle /18+2
-    GPIO.output(5, True)
+    GPIO.output(11, True)
     bottom.ChangeDutyCycle(duty)
     sleep(1)
-    GPIO.output(5, False)
+    GPIO.output(11, False)
     bottom.ChangeDutyCycle(0)
 
 if __name__ == "__main__":
