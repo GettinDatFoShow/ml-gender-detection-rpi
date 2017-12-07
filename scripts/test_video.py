@@ -20,6 +20,7 @@ rawCapture = PiRGBArray(camera, size=(640, 480))
 time.sleep(0.1)
 
 # capture frames from the camera
+counter = 0
 for frame in camera.capture_continuous(rawCapture, format="bgr", use_video_port=True):
     # grab the raw NumPy array representing the image, then initialize the timestamp
     # and occupied/unoccupied text
@@ -39,12 +40,16 @@ for frame in camera.capture_continuous(rawCapture, format="bgr", use_video_port=
     # print("Found " + str(len(faces)) + " face(s)")
 
     # Draw a rectangle around every found face
+
     for (x, y, w, h) in faces:
+        counter += 1
         cv2.rectangle(image, (x, y), (x + w, y + h), (255, 255, 0), 2)
         imCrop = image[y:y+h, x:x+w]
         print(y,y+h, x,x+w)
         cv2.imshow("Frame2", imCrop)
-        cv2.imwrite("found_face.jpg", imCrop)
+        if counter == 5:
+            cv2.imwrite("face_output.jpg", imCrop)
+            counter = 0
 
     cv2.imshow("Frame", image)
 
