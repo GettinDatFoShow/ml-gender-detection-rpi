@@ -168,7 +168,10 @@ if __name__ == "__main__":
         # Look for faces in the image using the loaded cascade file
         faces = face_cascade.detectMultiScale(gray, 1.1, 5)
 
-        # print("Found " + str(len(faces)) + " face(s)")
+        if len(faces) > 0:
+            print("Found " + str(len(faces)) + " face(s) testing in: " + counter)
+        else:
+            counter = 0
 
         # Draw a rectangle around every found face
 
