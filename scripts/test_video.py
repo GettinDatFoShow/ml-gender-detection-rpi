@@ -42,14 +42,13 @@ for frame in camera.capture_continuous(rawCapture, format="bgr", use_video_port=
     # Draw a rectangle around every found face
 
     for (x, y, w, h) in faces:
-        counter += 1
+        counter += 1;
         cv2.rectangle(image, (x, y), (x + w, y + h), (255, 255, 0), 2)
         imCrop = image[y:y+h, x:x+w]
         print(y,y+h, x,x+w)
         cv2.imshow("Frame2", imCrop)
         if counter == 5:
             cv2.imwrite("face_output.jpg", imCrop)
-            counter = 0
 
     cv2.imshow("Frame", image)
 
