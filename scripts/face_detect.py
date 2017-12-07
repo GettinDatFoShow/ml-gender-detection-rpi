@@ -144,7 +144,7 @@ if __name__ == "__main__":
             cv2.rectangle(image, (x, y), (x + w, y + h), (255, 255, 0), 2)
             imCrop = image[y:y + h, x:x + w]
             # print(y, y + h, x, x + w)
-            cv2.imshow("Frame2", imCrop)
+            # cv2.imshow("Frame2", imCrop)
             if counter == 10:
                 cv2.imwrite("face_output.jpg", imCrop)
                 counter = 0
