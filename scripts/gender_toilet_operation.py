@@ -20,12 +20,12 @@ import RPi.GPIO as GPIO
 from time import sleep
 
 GPIO.setmode(GPIO.BOARD)
-GPIO.setup(03, GPIO.OUT)
-GPIO.setup(05, GPIO.OUT)
+GPIO.setup(3, GPIO.OUT)
+GPIO.setup(5, GPIO.OUT)
 
-top=GPIO.PWM(03, 50)
+top=GPIO.PWM(3, 50)
 top.start(0)
-bottom=GPIO.PWM(05, 50)
+bottom=GPIO.PWM(5, 50)
 bottom.start(0)
 
 def load_graph(model_file):
@@ -75,18 +75,18 @@ def load_labels(label_file):
 
 def SetTopAngle(angle):
     duty = angle /18+2
-    GPIO.output(03, True)
+    GPIO.output(3, True)
     pwm.ChangeDutyCycle(duty)
     sleep(1)
-    GPIO.output(03, False)
+    GPIO.output(3, False)
     pwm.ChangeDutyCycle(0)
 
 def SetBottomAngle(angle):
     duty = angle /18+2
-    GPIO.output(03, True)
+    GPIO.output(5, True)
     pwm.ChangeDutyCycle(duty)
     sleep(1)
-    GPIO.output(03, False)
+    GPIO.output(5, False)
     pwm.ChangeDutyCycle(0)
 
 if __name__ == "__main__":
