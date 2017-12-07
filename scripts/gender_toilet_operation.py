@@ -207,11 +207,11 @@ if __name__ == "__main__":
                 for i in top_k:
                     print(labels[i], results[i])
                     print(labels[0])
-                    if labels[0] == "male":
-                        if results[0] > .6:
+
+                    if results[0] > .6:
                             print("lifting toilet seat for a dude!!!")
-                    elif labels[0] == "female":
-                        if results[0] > .6:
+                    else :
+                        if results[1] > .6:
                             print("lifting only the lid for a woman!!")
         cv2.imshow("Frame", image)
 
