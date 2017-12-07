@@ -206,13 +206,12 @@ if __name__ == "__main__":
                 labels = load_labels(label_file)
                 for i in top_k:
                     print(labels[i], results[i])
-                    print(labels[0])
 
                     if results[0] > .6:
-                            print("lifting toilet seat for a dude!!!")
+                            print("\nlifting toilet seat for a dude!!!\n")
                     else :
                         if results[1] > .6:
-                            print("lifting only the lid for a woman!!")
+                            print("\nlifting only the lid for a woman!!\n")
         cv2.imshow("Frame", image)
 
         key = cv2.waitKey(1) & 0xFF
