@@ -181,7 +181,7 @@ if __name__ == "__main__":
             imCrop = image[y:y + h, x:x + w]
             # print(y, y + h, x, x + w)
             # cv2.imshow("Frame2", imCrop)
-            if counter == 10:
+            if counter == 5:
                 cv2.imwrite("face_output.jpg", imCrop)
                 counter = 0
 
