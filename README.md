@@ -1,9 +1,9 @@
 # Overview
-**{Machine Learning} **
+**{Machine Learning}**
 
-**Face Gender Recognition **
+**Face Gender Recognition**
 
-**With Tensorflow and the Raspberry Pi **
+**With Tensorflow and the Raspberry Pi**
 
 ## Concept
 
